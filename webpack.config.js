@@ -22,7 +22,9 @@ module.exports = {
         static: './dist',
         hot: true
     },
-
+    resolve: {
+        extensions: ['.ts', '.js', '.json']
+    },
     module: {
         rules: [
             {

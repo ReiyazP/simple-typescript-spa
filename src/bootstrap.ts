@@ -1,3 +1,16 @@
+import { div } from './utils'
 
-document.querySelector("#root").innerHTML = 'Hello world'
+
+const App = (): HTMLElement => {
+    return div({ id: '1' })(
+        div({ id: '2' })(
+            "hi"
+        ),
+        div({ id: '3' })(
+            "hello"
+        )
+    )
+}
+
+document.querySelector("#root").appendChild(App())
 console.log('here!')
