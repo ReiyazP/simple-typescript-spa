@@ -1,14 +1,23 @@
-import { div } from './utils'
+import { div, } from './HTMLElements'
 
 
 const App = (): HTMLElement => {
-    return div({ id: '1' })(
-        div({ id: '2' })(
-            "hi"
-        ),
-        div({ id: '3' })(
-            "hello"
+    let count: number = 1;
+    return div({ id: 'yo' })(
+        div(
+            {
+                id: 'stow',
+                style: { background: 'blue' },
+                onclick: () => {
+                    count += 1
+                    document.querySelector('#stow').innerHTML = `${count}`
+                }
+            },
         )
+            (
+                `${count}`
+            ),
+
     )
 }
 
