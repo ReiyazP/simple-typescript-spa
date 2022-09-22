@@ -1,25 +1,8 @@
-import { div, } from './HTMLElements'
+import { routes } from './views'
+import { Router } from './router'
+
+export const router = new Router(routes)
 
 
-const App = (): HTMLElement => {
-    let count: number = 1;
-    return div({ id: 'yo' })(
-        div(
-            {
-                id: 'stow',
-                style: { background: 'blue' },
-                onclick: () => {
-                    count += 1
-                    document.querySelector('#stow').innerHTML = `${count}`
-                }
-            },
-        )
-            (
-                `${count}`
-            ),
 
-    )
-}
 
-document.querySelector("#root").appendChild(App())
-console.log('here!')

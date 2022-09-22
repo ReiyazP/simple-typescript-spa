@@ -22,7 +22,7 @@ const createElement = (tag): ((obj?: Object) => HTMLElement) => {
 
 }
 
-type ElementI = HTMLElement | string
+type ElementI = HTMLElement | string | number
 type FunctionalElement = () => (ElementI[])
 type ChildElement = Array<FunctionalElement | ElementI>
 
@@ -40,8 +40,8 @@ const appendElementTo = (newElement: HTMLElement, ...children: ChildElement): HT
                     })
                 }
             } else {
-                if (typeof child === 'string') {
-                    newElement.innerHTML += child
+                if (typeof child === 'string'||typeof child === 'number') {
+                    newElement.innerHTML += child.toString()
                 } else {
 
                     newElement.appendChild(child)
