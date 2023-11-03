@@ -34,7 +34,7 @@ const appendElementTo = (newElement: HTMLElement, ...children: ChildElement): HT
             if (child instanceof HTMLElement) {
                 newElement.appendChild(child)
             } else if (child instanceof Function) {
-                if ((child() as any) instanceof Array<ElementI>) {
+                if (Array.isArray(child() as any)) {
                     child().forEach((_child: ElementI) => {
                         appendElementTo(newElement, _child)
                     })
